@@ -11,7 +11,7 @@ RuboCop::RakeTask.new
 
 namespace :travis do
   desc 'Run rspec and rubocop'
-  travis_tasks = w%[spec, rubocop]
+  travis_tasks = %w[spec, rubocop]
   task :run do
     travis_tasks.each do |task|
       puts "Starting to run #{task}..."
