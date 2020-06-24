@@ -60,8 +60,8 @@ module Starcall
     end
 
     # Data Dragon also provides detail for every item in the game.
-    # with this method you can find info such as the item's description, purchase value, sell value, items it builds from,
-    # items it builds into, and stats granted from the item.
+    # with this method you can find info such as the item's description, purchase value, sell value,
+    # items it builds from, items it builds into, and stats granted from the item.
     def dd_items
       ApiRequests.make_request(url: dd_url(game_component: 'item'))
     end
@@ -98,14 +98,19 @@ module Starcall
       ApiRequests.make_request(url: dd_euw_specific_version_url)['n'][game_component]
     end
 
-    # This builds the data dragon url for specific components such as champions, using the above method to get the version.
+    # This builds the data dragon url for specific components such as champions,
+    # using the above method to get the version.
     def dd_url(game_component:)
-      "http://ddragon.leagueoflegends.com/cdn/#{dd_current_data_version(game_component: game_component)}/data/en_GB/#{game_component}.json"
+      'http://ddragon.leagueoflegends.com/cdn/'\
+      "#{dd_current_data_version(game_component: game_component)}/data/en_GB/"\
+      "#{game_component}.json"
     end
 
     # This builds the data dragon url for a specific champion.
     def dd_specific_champion_url(champion_name:)
-      "http://ddragon.leagueoflegends.com/cdn/#{dd_current_data_version(game_component: 'champion')}/data/en_GB/champion/#{champion_name}.json"
+      'http://ddragon.leagueoflegends.com/cdn/'\
+      "#{dd_current_data_version(game_component: 'champion')}"\
+      "/data/en_GB/champion/#{champion_name}.json"
     end
   end
 end
