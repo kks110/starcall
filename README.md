@@ -1,22 +1,26 @@
 # Starcall
+![starcall](http://ddragon.leagueoflegends.com/cdn/10.12.1/img/spell/SorakaQ.png)
 
+----
+[![Build Status](https://travis-ci.com/kks110/starcall.svg?branch=master)](https://travis-ci.com/kks110/starcall)
+
+---
 A Gem to help with calls to Riot API.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-```ruby
-gem 'starcall'
-```
+    gem 'starcall'
+
 
 And then execute:
 
-    $ bundle
+    bundle
 
 Or install it yourself as:
 
-    $ gem install starcall
+    gem install starcall
 
 ## Usage
 
