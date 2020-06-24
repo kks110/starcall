@@ -9,19 +9,14 @@ RSpec::Core::RakeTask.new(:spec)
 
 RuboCop::RakeTask.new
 
-
 namespace :travis do
-  desc 'Run rspec'
-  task :rspec do
-    puts 'Starting to run rspec...'
-    system('bundle exec rake spec')
-    raise 'rspec failed!' unless $CHILD_STATUS.exitstatus.zero?
-  end
-
-  desc 'Run rubocop'
-  task :rubocop do
-    puts 'Starting to run rubocop...'
-    system('bundle exec rake rubocop')
-    raise 'rubocop failed!' unless $CHILD_STATUS.exitstatus.zero?
+  desc 'Run rspec and rubocop'
+  travis_tasks = w%[spec, rubocop]
+  task :run do
+    travis_tasks.each do |task|
+      puts "Starting to run #{task}..."
+      system("bundle exec rake #{task}")
+      raise "#{task} failed!" unless $CHILD_STATUS.exitstatus.zero?
+    end
   end
 end
