@@ -14,7 +14,7 @@ namespace :travis do
   desc 'Run rspec'
   task :rspec do
     puts 'Starting to run rspec...'
-    system('bundle exec rake rspec')
+    system('bundle exec rake spec')
     raise 'rspec failed!' unless $CHILD_STATUS.exitstatus.zero?
   end
 
