@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require_relative '../../lib/starcall/api_requests'
 
 RSpec.describe ApiRequests do
   describe '.make_request' do
     subject(:requester) { described_class.make_request(url: url) }
 
-    let(:url) { "https://ddragon.leagueoflegends.com/api/versions.json" }
+    let(:url) { 'https://ddragon.leagueoflegends.com/api/versions.json' }
     let(:response) { instance_double(HTTParty::Response, body: response_body) }
     let(:response_body) { 'response_body' }
 
