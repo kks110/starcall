@@ -1,0 +1,7 @@
+AllCops:
+  Exclude:
+    - 'bin/*'
+
+Layout/LineLength:
+  Max: 120
+
