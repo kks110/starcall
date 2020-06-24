@@ -3,4 +3,5 @@ cache: bundler
 rvm:
   - 2.6.5
 script:
-  - bundle exec rake travis:run
+  - bundle exec rake travis:rspec
+  - bundle exec rake travis:rubocop

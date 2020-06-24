@@ -11,12 +11,17 @@ RuboCop::RakeTask.new
 
 
 namespace :travis do
-  desc 'Run rubocop and rspec'
-  task :run do
-    %w[rubocop rspec].each do |cmd|
-      puts "Starting to run #{cmd}..."
-      system("bundle exec rake #{cmd}")
-      raise "#{cmd} failed!" unless $CHILD_STATUS.exitstatus.zero?
-    end
+  desc 'Run rspec'
+  task :rspec do
+    puts 'Starting to run rspec...'
+    system('bundle exec rake rspec')
+    raise 'rspec failed!' unless $CHILD_STATUS.exitstatus.zero?
+  end
+
+  desc 'Run rubocop'
+  task :rubocop do
+    puts 'Starting to run rubocop...'
+    system('bundle exec rake rubocop')
+    raise 'rubocop failed!' unless $CHILD_STATUS.exitstatus.zero?
   end
 end
