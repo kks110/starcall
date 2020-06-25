@@ -1,5 +1,4 @@
-# Starcall
-![starcall](http://ddragon.leagueoflegends.com/cdn/10.12.1/img/spell/SorakaQ.png)
+![starcall](starcall.png)
 
 ----
 [![Build Status](https://travis-ci.com/kks110/starcall.svg?branch=master)](https://travis-ci.com/kks110/starcall)
@@ -26,31 +25,28 @@ Or install it yourself as:
 
 ### Static Queries
 
-First initialis the Static queries instance:
+You can call any of the below methods like:
 ```ruby
-static_data = Starcall::StaticData.new
-```
-You can then call the any of the below methods, eg:
-```ruby
-static_data.season_ids
+Starcall::StaticData.season_ids
 ```
 
-#### season_ids
+#### `season_ids`
+
 Season ids are used in match history to indicate which season a match was played.
 A full list of season ids can be retrieved with the below method.
 
-#### queue_ids
+#### `queue_ids`
 Queue ids show up in several places throughout the API and are used to indicate which kind of match was played.
 A full list of queue ids can be can be retrieved with the below method.
 
-#### map_ids
+#### `map_ids`
 Map ids are used in match history to indicate which map a match was played.
 A full list of map ids can be can be retrieved with the below method.
 
-#### game_modes
+#### `game_modes`
 A full list of game modes can be can be retrieved with the below method.
 
-#### game_types
+#### `game_types`
 A full list of game types can be can be retrieved with the below method.
 
 #### Data Dragon
@@ -58,33 +54,33 @@ Data Dragon is Riots way of centralizing League of Legends game data and assets,
 All of which can be used by third-party developers. 
 Please be aware that Riot update Data Dragon after each League of Legends manualy, so it is not always updated immediately after a patch.
 
-#### dd_versions
+#### `dd_versions`
 All valid Data Dragon versions  can be can be retrieved with the below method.
 Typically there's only a single build of Data Dragon for a given patch,
 however occasionally there will be additional builds.
 This typically occurs when there's an error in the original build.
 As such, you should always use the most recent Data Dragon version for a given patch for the best results.
 
-#### dd_euw_versions
+#### `dd_euw_versions`
 Data Dragon versions aren't always equivalent to the League of Legends client version in a region.
 You can find the version each region is using via the realms files.
 This function returns the EWU versions
 
-#### dd_champions
+#### `dd_champions`
 This returns a list of all champion with a brief summary, including stats, id and blurb.
 
-#### dd_specific_champion(champion_name:)
+#### `dd_specific_champion(champion_name:)`
 For me detailed and specific information about a champion, this call can be used.
 
-#### dd_items
+#### `dd_items`
 Data Dragon also provides detail for every item in the game.
 with this method you can find info such as the item's description, purchase value, sell value,
 items it builds from, items it builds into, and stats granted from the item.
 
-#### dd_summoner_spells
+#### `dd_summoner_spells`
 Details about summoner spells.
 
-#### dd_profile_icons
+#### `dd_profile_icons`
 Details about profile icons and where they can be found on the sprite sheets.
 
 
