@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    Starcall (0.1.0)
+    starcall (0.1.0)
       httparty (~> 0.17)
 
 GEM
@@ -57,12 +57,12 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  Starcall!
   bundler (~> 2.0)
   rake (~> 12.3)
   rspec (~> 3.0)
   rubocop (~> 0.86)
   rubocop-rspec (~> 1.40)
+  starcall!
 
 BUNDLED WITH
    2.0.2

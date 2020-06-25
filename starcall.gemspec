@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'starcall/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'Starcall'
+  spec.name          = 'starcall'
   spec.version       = Starcall::VERSION
   spec.authors       = ['Kelvin Samuel']
   spec.email         = ['kelvin@kks110.com']
