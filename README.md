@@ -25,7 +25,7 @@ Or install it yourself as:
 
 ### Static Queries
 
-You can call the any of the below methods like:
+You can call any of the below methods like:
 ```ruby
 Starcall::StaticData.season_ids
 ```
