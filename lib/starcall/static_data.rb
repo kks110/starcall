@@ -76,8 +76,6 @@ module Starcall
       ApiRequests.make_request(url: dd_url(game_component: 'profileicon'))
     end
 
-    private
-
     # This help build the static data url for thins such as map ids.
     def self.static_url(search_term:)
       "http://static.developer.riotgames.com/docs/lol/#{search_term}.json"
@@ -112,5 +110,12 @@ module Starcall
       "#{dd_current_data_version(game_component: 'champion')}"\
       "/data/en_GB/champion/#{champion_name}.json"
     end
+
+    private_class_method :static_url,
+                         :dd_versions_url,
+                         :dd_euw_specific_version_url,
+                         :dd_current_data_version,
+                         :dd_url,
+                         :dd_specific_champion_url
   end
 end
