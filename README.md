@@ -2,7 +2,8 @@
 
 ----
 [![Build Status](https://travis-ci.com/kks110/starcall.svg?branch=master)](https://travis-ci.com/kks110/starcall)
-
+![Gem Version](https://img.shields.io/gem/v/starcall)
+![Downloads](https://img.shields.io/gem/dt/starcall)
 ---
 A Gem to help with calls to Riot API.
 
