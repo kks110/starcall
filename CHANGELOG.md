@@ -3,10 +3,12 @@
 ## master (unreleased)
 
 ### New features
-None
+- Regions
+    - `Starcall::Regions.list` for a full list of support regions.
+    - Static data that can change per region, now supports a region.
 
 ### Changes
-None
+- `dd_euw_versions` has now become `dd_region_versions` defaulting to `euw` if no region has been supplied.
 
 ### Bug fixes 
 None

@@ -7,7 +7,10 @@ Layout/LineLength:
   Max: 120
 
 Metrics/BlockLength:
-  Max: 150
+  ExcludedMethods: ['describe', 'context']
+
+Metrics/MethodLength:
+  Max: 15
 
 Layout/SpaceAroundMethodCallOperator:
   Enabled: true
