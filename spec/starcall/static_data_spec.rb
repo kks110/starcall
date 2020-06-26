@@ -5,7 +5,6 @@ require_relative '../../lib/starcall/static_data'
 RSpec.describe Starcall::StaticData do
   before do
     allow(ApiRequests).to receive(:make_request).and_return(response)
-    subject
   end
 
   let(:response) do
@@ -19,10 +18,6 @@ RSpec.describe Starcall::StaticData do
     }
   end
 
-  def url_to_test_for(url:)
-    expect(ApiRequests).to have_received(:make_request).with(url)
-  end
-
   describe '.season_ids' do
     subject(:season_ids) { described_class.season_ids }
     let(:url) do
@@ -30,7 +25,8 @@ RSpec.describe Starcall::StaticData do
     end
 
     it 'calls the api' do
-      url_to_test_for(url: url)
+      season_ids
+      expect(ApiRequests).to have_received(:make_request).with(url)
     end
   end
 
@@ -41,7 +37,8 @@ RSpec.describe Starcall::StaticData do
     end
 
     it 'calls the api' do
-      url_to_test_for(url: url)
+      queue_ids
+      expect(ApiRequests).to have_received(:make_request).with(url)
     end
   end
 
@@ -52,7 +49,8 @@ RSpec.describe Starcall::StaticData do
     end
 
     it 'calls the api' do
-      url_to_test_for(url: url)
+      map_ids
+      expect(ApiRequests).to have_received(:make_request).with(url)
     end
   end
 
@@ -63,7 +61,8 @@ RSpec.describe Starcall::StaticData do
     end
 
     it 'calls the api' do
-      url_to_test_for(url: url)
+      game_modes
+      expect(ApiRequests).to have_received(:make_request).with(url)
     end
   end
 
@@ -74,7 +73,8 @@ RSpec.describe Starcall::StaticData do
     end
 
     it 'calls the api' do
-      url_to_test_for(url: url)
+      game_types
+      expect(ApiRequests).to have_received(:make_request).with(url)
     end
   end
 
@@ -85,75 +85,143 @@ RSpec.describe Starcall::StaticData do
     end
 
     it 'calls the api' do
-      url_to_test_for(url: url)
+      dd_versions
+      expect(ApiRequests).to have_received(:make_request).with(url)
     end
   end
 
-  describe '.dd_euw_versions' do
-    subject(:dd_euw_versions) { described_class.dd_euw_versions }
-    let(:url) do
-      { url: 'https://ddragon.leagueoflegends.com/realms/euw.json' }
+  context 'region is valid' do
+    before do
+      allow(Starcall::Regions).to receive(:valid?).and_return(true)
     end
 
-    it 'calls the api' do
-      url_to_test_for(url: url)
-    end
-  end
+    describe '.dd_region_versions' do
+      subject(:dd_region_versions) { described_class.dd_region_versions }
+      let(:url) do
+        { url: 'https://ddragon.leagueoflegends.com/realms/euw.json' }
+      end
 
-  describe '.dd_champions' do
-    subject(:dd_champions) { described_class.dd_champions }
-    let(:url) do
-      { url: "http://ddragon.leagueoflegends.com/cdn/#{response['n']['champion']}/data/en_GB/champion.json" }
-    end
-
-    it 'calls the api' do
-      url_to_test_for(url: url)
-    end
-  end
-
-  describe '.dd_items' do
-    subject(:dd_items) { described_class.dd_items }
-    let(:url) do
-      { url: "http://ddragon.leagueoflegends.com/cdn/#{response['n']['item']}/data/en_GB/item.json" }
+      it 'calls the api' do
+        dd_region_versions
+        expect(ApiRequests).to have_received(:make_request).with(url)
+      end
     end
 
-    it 'calls the api' do
-      url_to_test_for(url: url)
-    end
-  end
+    describe '.dd_champions' do
+      subject(:dd_champions) { described_class.dd_champions }
+      let(:url) do
+        { url: "http://ddragon.leagueoflegends.com/cdn/#{response['n']['champion']}/data/en_GB/champion.json" }
+      end
 
-  describe '.dd_summoner_spells' do
-    subject(:dd_summoner_spells) { described_class.dd_summoner_spells }
-    let(:url) do
-      { url: "http://ddragon.leagueoflegends.com/cdn/#{response['n']['summoner']}/data/en_GB/summoner.json" }
-    end
-
-    it 'calls the api' do
-      url_to_test_for(url: url)
-    end
-  end
-
-  describe '.dd_profile_icons' do
-    subject(:dd_profile_icons) { described_class.dd_profile_icons }
-    let(:url) do
-      { url: "http://ddragon.leagueoflegends.com/cdn/#{response['n']['profileicon']}/data/en_GB/profileicon.json" }
+      it 'calls the api' do
+        dd_champions
+        expect(ApiRequests).to have_received(:make_request).with(url)
+      end
     end
 
-    it 'calls the api' do
-      url_to_test_for(url: url)
-    end
-  end
+    describe '.dd_items' do
+      subject(:dd_items) { described_class.dd_items }
+      let(:url) do
+        { url: "http://ddragon.leagueoflegends.com/cdn/#{response['n']['item']}/data/en_GB/item.json" }
+      end
 
-  describe '.dd_specific_champion' do
-    subject(:dd_specific_champion) { described_class.dd_specific_champion(champion_name: champion_name) }
-    let(:champion_name) { 'Aatrox' }
-    let(:url) do
-      { url: "http://ddragon.leagueoflegends.com/cdn/#{response['n']['profileicon']}"\
+      it 'calls the api' do
+        dd_items
+        expect(ApiRequests).to have_received(:make_request).with(url)
+      end
+    end
+
+    describe '.dd_summoner_spells' do
+      subject(:dd_summoner_spells) { described_class.dd_summoner_spells }
+      let(:url) do
+        { url: "http://ddragon.leagueoflegends.com/cdn/#{response['n']['summoner']}/data/en_GB/summoner.json" }
+      end
+
+      it 'calls the api' do
+        dd_summoner_spells
+        expect(ApiRequests).to have_received(:make_request).with(url)
+      end
+    end
+
+    describe '.dd_profile_icons' do
+      subject(:dd_profile_icons) { described_class.dd_profile_icons }
+      let(:url) do
+        { url: "http://ddragon.leagueoflegends.com/cdn/#{response['n']['profileicon']}/data/en_GB/profileicon.json" }
+      end
+
+      it 'calls the api' do
+        dd_profile_icons
+        expect(ApiRequests).to have_received(:make_request).with(url)
+      end
+    end
+
+    describe '.dd_specific_champion' do
+      subject(:dd_specific_champion) { described_class.dd_specific_champion(champion_name: champion_name) }
+      let(:champion_name) { 'Aatrox' }
+      let(:url) do
+        { url: "http://ddragon.leagueoflegends.com/cdn/#{response['n']['profileicon']}"\
              "/data/en_GB/champion/#{champion_name}.json" }
+      end
+
+      it 'calls the api' do
+        dd_specific_champion
+        expect(ApiRequests).to have_received(:make_request).with(url)
+      end
+    end
+  end
+
+  context 'region is invalid' do
+    before do
+      allow(Starcall::Regions).to receive(:valid?).and_raise(Starcall::Regions::InvalidRegion)
     end
 
-    it 'calls the api' do
-      url_to_test_for(url: url)
+    describe '.dd_region_versions' do
+      subject(:dd_region_versions) { described_class.dd_region_versions }
+
+      it 'calls the api' do
+        expect { dd_region_versions }.to raise_error(StandardError)
+      end
+    end
+
+    describe '.dd_champions' do
+      subject(:dd_champions) { described_class.dd_champions }
+
+      it 'calls the api' do
+        expect { dd_champions }.to raise_error(StandardError)
+      end
+    end
+
+    describe '.dd_items' do
+      subject(:dd_items) { described_class.dd_items }
+
+      it 'calls the api' do
+        expect { dd_items }.to raise_error(StandardError)
+      end
+    end
+
+    describe '.dd_summoner_spells' do
+      subject(:dd_summoner_spells) { described_class.dd_summoner_spells }
+
+      it 'calls the api' do
+        expect { dd_summoner_spells }.to raise_error(StandardError)
+      end
+    end
+
+    describe '.dd_profile_icons' do
+      subject(:dd_profile_icons) { described_class.dd_profile_icons }
+
+      it 'calls the api' do
+        expect { dd_profile_icons }.to raise_error(StandardError)
+      end
+    end
+
+    describe '.dd_specific_champion' do
+      subject(:dd_specific_champion) { described_class.dd_specific_champion(champion_name: champion_name) }
+      let(:champion_name) { 'Aatrox' }
+
+      it 'calls the api' do
+        expect { dd_specific_champion }.to raise_error(StandardError)
+      end
     end
   end
 end

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'starcall/api_requests'
+require 'starcall/regions'
 
 module Starcall
   # This class is used for all things Static Data related.
@@ -45,35 +46,52 @@ module Starcall
 
     # Data Dragon versions aren't always equivalent to the League of Legends client version in a region.
     # You can find the version each region is using via the realms files.
-    def self.dd_euw_versions
-      ApiRequests.make_request(url: dd_euw_specific_version_url)
+    # If a region isn't passed, it will default to EUW
+    def self.dd_region_versions(region: 'euw')
+      Starcall::Regions.valid?(region: region)
+      ApiRequests.make_request(url: dd_specific_version_url(region: region))
     end
 
     # This returns a list of all champion with a brief summary, including stats, id and blurb.
-    def self.dd_champions
-      ApiRequests.make_request(url: dd_url(game_component: 'champion'))
+    # Each region can have slightly different versions, so for a specific version, pass in a region.
+    # If a region isn't passed, it will default to EUW
+    def self.dd_champions(region: 'euw')
+      Starcall::Regions.valid?(region: region)
+      ApiRequests.make_request(url: dd_url(region: region, game_component: 'champion'))
     end
 
     # For me detailed and specific information about a champion, this call can be used.
-    def self.dd_specific_champion(champion_name:)
-      ApiRequests.make_request(url: dd_specific_champion_url(champion_name: champion_name))
+    # Each region can have slightly different versions, so for a specific version, pass in a region.
+    # If a region isn't passed, it will default to EUW
+    def self.dd_specific_champion(region: 'euw', champion_name:)
+      Starcall::Regions.valid?(region: region)
+      ApiRequests.make_request(url: dd_specific_champion_url(region: region, champion_name: champion_name))
     end
 
     # Data Dragon also provides detail for every item in the game.
     # with this method you can find info such as the item's description, purchase value, sell value,
     # items it builds from, items it builds into, and stats granted from the item.
-    def self.dd_items
-      ApiRequests.make_request(url: dd_url(game_component: 'item'))
+    # Each region can have slightly different versions, so for a specific version, pass in a region.
+    # If a region isn't passed, it will default to EUW
+    def self.dd_items(region: 'euw')
+      Starcall::Regions.valid?(region: region)
+      ApiRequests.make_request(url: dd_url(region: region, game_component: 'item'))
     end
 
     # Details about summoner spells.
-    def self.dd_summoner_spells
-      ApiRequests.make_request(url: dd_url(game_component: 'summoner'))
+    # Each region can have slightly different versions, so for a specific version, pass in a region.
+    # If a region isn't passed, it will default to EUW
+    def self.dd_summoner_spells(region: 'euw')
+      Starcall::Regions.valid?(region: region)
+      ApiRequests.make_request(url: dd_url(region: region, game_component: 'summoner'))
     end
 
     # Details about profile icons and where they can be found on the sprite sheets.
-    def self.dd_profile_icons
-      ApiRequests.make_request(url: dd_url(game_component: 'profileicon'))
+    # Each region can have slightly different versions, so for a specific version, pass in a region.
+    # If a region isn't passed, it will default to EUW
+    def self.dd_profile_icons(region: 'euw')
+      Starcall::Regions.valid?(region: region)
+      ApiRequests.make_request(url: dd_url(region: region, game_component: 'profileicon'))
     end
 
     # This help build the static data url for thins such as map ids.
@@ -87,33 +105,37 @@ module Starcall
     end
 
     # This is the specific EUW data dragon version URL.
-    def self.dd_euw_specific_version_url
-      'https://ddragon.leagueoflegends.com/realms/euw.json'
+    def self.dd_specific_version_url(region: 'euw')
+      Starcall::Regions.valid?(region: region)
+      "https://ddragon.leagueoflegends.com/realms/#{region}.json"
     end
 
     # This gets the current version of specific game components, such as champions.
-    def self.dd_current_data_version(game_component:)
-      ApiRequests.make_request(url: dd_euw_specific_version_url)['n'][game_component]
+    def self.dd_current_data_version(region: 'euw', game_component:)
+      Starcall::Regions.valid?(region: region)
+      ApiRequests.make_request(url: dd_specific_version_url(region: region))['n'][game_component]
     end
 
     # This builds the data dragon url for specific components such as champions,
     # using the above method to get the version.
-    def self.dd_url(game_component:)
+    def self.dd_url(region: 'euw', game_component:)
+      Starcall::Regions.valid?(region: region)
       'http://ddragon.leagueoflegends.com/cdn/'\
-      "#{dd_current_data_version(game_component: game_component)}/data/en_GB/"\
+      "#{dd_current_data_version(region: region, game_component: game_component)}/data/en_GB/"\
       "#{game_component}.json"
     end
 
     # This builds the data dragon url for a specific champion.
-    def self.dd_specific_champion_url(champion_name:)
+    def self.dd_specific_champion_url(region: 'euw', champion_name:)
+      Starcall::Regions.valid?(region: region)
       'http://ddragon.leagueoflegends.com/cdn/'\
-      "#{dd_current_data_version(game_component: 'champion')}"\
+      "#{dd_current_data_version(region: region, game_component: 'champion')}"\
       "/data/en_GB/champion/#{champion_name}.json"
     end
 
     private_class_method :static_url,
                          :dd_versions_url,
-                         :dd_euw_specific_version_url,
+                         :dd_specific_version_url,
                          :dd_current_data_version,
                          :dd_url,
                          :dd_specific_champion_url
