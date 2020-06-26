@@ -49,7 +49,7 @@ module Starcall
     # If a region isn't passed, it will default to EUW
     def self.dd_region_versions(region: 'euw')
       Starcall::Regions.valid?(region: region)
-      ApiRequests.make_request(url: dd_specific_version_url(region: region))
+      ApiRequests.make_request(url: dd_region_version_url(region: region))
     end
 
     # This returns a list of all champion with a brief summary, including stats, id and blurb.
@@ -105,7 +105,7 @@ module Starcall
     end
 
     # This is the specific EUW data dragon version URL.
-    def self.dd_specific_version_url(region: 'euw')
+    def self.dd_region_version_url(region: 'euw')
       Starcall::Regions.valid?(region: region)
       "https://ddragon.leagueoflegends.com/realms/#{region}.json"
     end
@@ -113,7 +113,7 @@ module Starcall
     # This gets the current version of specific game components, such as champions.
     def self.dd_current_data_version(region: 'euw', game_component:)
       Starcall::Regions.valid?(region: region)
-      ApiRequests.make_request(url: dd_specific_version_url(region: region))['n'][game_component]
+      ApiRequests.make_request(url: dd_region_version_url(region: region))['n'][game_component]
     end
 
     # This builds the data dragon url for specific components such as champions,
@@ -135,7 +135,7 @@ module Starcall
 
     private_class_method :static_url,
                          :dd_versions_url,
-                         :dd_specific_version_url,
+                         :dd_region_version_url,
                          :dd_current_data_version,
                          :dd_url,
                          :dd_specific_champion_url

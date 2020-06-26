@@ -24,6 +24,17 @@ Or install it yourself as:
 
 ## Usage
 
+### Regions
+Sometimes, due to manual upload speeds, versions in different regions might be different or due to things like version specific bugs.
+Due to this, if you are looking for details of a specific region, it worth checking there rather than generically.
+
+A full lits of supported regions can be obtained by running:
+```ruby
+Starcall::Regions.list
+```
+
+With any query, unless a specific region is specified, EUW will be assumed.
+
 ### Static Queries
 
 You can call any of the below methods like:
@@ -62,27 +73,49 @@ however occasionally there will be additional builds.
 This typically occurs when there's an error in the original build.
 As such, you should always use the most recent Data Dragon version for a given patch for the best results.
 
-#### `dd_euw_versions`
+#### `dd_region_versions`
+Accepts a `region:` by defult, `euw` will be used.
+
 Data Dragon versions aren't always equivalent to the League of Legends client version in a region.
 You can find the version each region is using via the realms files.
-This function returns the EWU versions
+If a region isn't passed, it will default to EUW
 
 #### `dd_champions`
+Accepts a `region:` by defult, `euw` will be used.
+
 This returns a list of all champion with a brief summary, including stats, id and blurb.
+Each region can have slightly different versions, so for a specific version, pass in a region.
+If a region isn't passed, it will default to EUW
 
 #### `dd_specific_champion(champion_name:)`
+Accepts a `region:` by defult, `euw` will be used.
+
 For me detailed and specific information about a champion, this call can be used.
+Each region can have slightly different versions, so for a specific version, pass in a region.
+If a region isn't passed, it will default to EUW
 
 #### `dd_items`
+Accepts a `region:` by defult, `euw` will be used.
+
 Data Dragon also provides detail for every item in the game.
 with this method you can find info such as the item's description, purchase value, sell value,
 items it builds from, items it builds into, and stats granted from the item.
+Each region can have slightly different versions, so for a specific version, pass in a region.
+If a region isn't passed, it will default to EUW
 
 #### `dd_summoner_spells`
+Accepts a `region:` by defult, `euw` will be used.
+
 Details about summoner spells.
+Each region can have slightly different versions, so for a specific version, pass in a region.
+If a region isn't passed, it will default to EUW
 
 #### `dd_profile_icons`
+Accepts a `region:` by defult, `euw` will be used.
+
 Details about profile icons and where they can be found on the sprite sheets.
+Each region can have slightly different versions, so for a specific version, pass in a region.
+If a region isn't passed, it will default to EUW
 
 
 ## Development
