@@ -1,5 +1,5 @@
 env:
-  RUBY_VERSION: 2.6.5
+  RUBY_VERSION: 2.6
 
 name: CI tests
 on: [push,pull_request]
