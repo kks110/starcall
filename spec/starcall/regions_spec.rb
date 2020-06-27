@@ -39,14 +39,14 @@ RSpec.describe Starcall::Regions do
     end
 
     context 'invalid region' do
-      let(:region_to_test) { 'abc' }
-      let(:msg) do
-        'abc is not a valid region. Please consult Starcall::Regions.list for a list of valid regions.'
+      before do
+        allow(Starcall::Error::InvalidRegion).to receive(:new).and_raise(StandardError)
       end
 
+      let(:region_to_test) { 'abc' }
+
       it 'raises and error on an invalid region' do
-        expect { valid_region_check }.to raise_error(Starcall::Regions::InvalidRegion)
-        expect { valid_region_check }.to raise_error.with_message(msg)
+        expect { valid_region_check }.to raise_error(StandardError)
       end
     end
   end
