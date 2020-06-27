@@ -70,7 +70,7 @@ A full list of game types can be can be retrieved with the below method.
 #### Data Dragon
 Data Dragon is Riots way of centralizing League of Legends game data and assets, including champions, items, runes, summoner spells, and profile icons. 
 All of which can be used by third-party developers. 
-Please be aware that Riot update Data Dragon after each League of Legends manualy, so it is not always updated immediately after a patch.
+Please be aware that Riot update Data Dragon after each League of Legends manually, so it is not always updated immediately after a patch.
 
 #### `dd_versions`
 All valid Data Dragon versions  can be can be retrieved with the below method.
@@ -80,49 +80,31 @@ This typically occurs when there's an error in the original build.
 As such, you should always use the most recent Data Dragon version for a given patch for the best results.
 
 #### `dd_region_versions`
-Accepts a `region:` by defult, `euw` will be used.
 
 Data Dragon versions aren't always equivalent to the League of Legends client version in a region.
 You can find the version each region is using via the realms files.
-If a region isn't passed, it will default to EUW
 
 #### `dd_champions`
-Accepts a `region:` by defult, `euw` will be used.
 
 This returns a list of all champion with a brief summary, including stats, id and blurb.
-Each region can have slightly different versions, so for a specific version, pass in a region.
-If a region isn't passed, it will default to EUW
 
 #### `dd_specific_champion(champion_name:)`
-Accepts a `region:` by defult, `euw` will be used.
 
-For me detailed and specific information about a champion, this call can be used.
-Each region can have slightly different versions, so for a specific version, pass in a region.
-If a region isn't passed, it will default to EUW
+For more detailed and specific information about a champion, this call can be used.
 
 #### `dd_items`
-Accepts a `region:` by defult, `euw` will be used.
 
 Data Dragon also provides detail for every item in the game.
 with this method you can find info such as the item's description, purchase value, sell value,
 items it builds from, items it builds into, and stats granted from the item.
-Each region can have slightly different versions, so for a specific version, pass in a region.
-If a region isn't passed, it will default to EUW
 
 #### `dd_summoner_spells`
-Accepts a `region:` by defult, `euw` will be used.
 
 Details about summoner spells.
-Each region can have slightly different versions, so for a specific version, pass in a region.
-If a region isn't passed, it will default to EUW
 
 #### `dd_profile_icons`
-Accepts a `region:` by defult, `euw` will be used.
 
 Details about profile icons and where they can be found on the sprite sheets.
-Each region can have slightly different versions, so for a specific version, pass in a region.
-If a region isn't passed, it will default to EUW
-
 
 ## Development
 
