@@ -28,18 +28,24 @@ Or install it yourself as:
 Sometimes, due to manual upload speeds, versions in different regions might be different or due to things like version specific bugs.
 Due to this, if you are looking for details of a specific region, it worth checking there rather than generically.
 
-A full lits of supported regions can be obtained by running:
+A full list of supported regions can be obtained by running:
 ```ruby
 Starcall::Regions.list
 ```
 
-With any query, unless a specific region is specified, EUW will be assumed.
 
 ### Static Queries
 
-You can call any of the below methods like:
+First you need to initialise and instance of Starcall::StaticData
 ```ruby
-Starcall::StaticData.season_ids
+static_data = Starcall::StaticData.new
+```
+
+Some of the queries below can return different data based on the region. When you initialize the class, you can pass in a valid region.
+Regions that Riot support can be queried as per the Regions section above.
+If no region is supplied, 'euw' will be assumed.
+```ruby
+Starcall::StaticData.new(region: 'na')
 ```
 
 #### `season_ids`
