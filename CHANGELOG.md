@@ -8,7 +8,10 @@
     - Static data that can change per region, now supports a region.
 
 ### Changes
+- `Starcall::StaticData` now needs to be initialised. Can be initialised with a region. If none is supplied, 'euw' is assumed.
 - `dd_euw_versions` has now become `dd_region_versions` defaulting to `euw` if no region has been supplied.
+- Errors
+    - An error module has now been created where custom errors will be stored.
 
 ### Bug fixes 
 None
