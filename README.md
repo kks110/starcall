@@ -1,7 +1,7 @@
 ![starcall](starcall.png)
 
 ----
-[![Build Status](https://travis-ci.com/kks110/starcall.svg?branch=master)](https://travis-ci.com/kks110/starcall)
+![Build Status](https://img.shields.io/github/workflow/status/kks110/starcall/tests/master)
 ![Gem Version](https://img.shields.io/gem/v/starcall)
 ![Downloads](https://img.shields.io/gem/dt/starcall)
 ---

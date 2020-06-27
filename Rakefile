@@ -9,7 +9,7 @@ RSpec::Core::RakeTask.new(:spec)
 
 RuboCop::RakeTask.new
 
-namespace :travis do
+namespace :github do
   desc 'Run rspec and rubocop'
   travis_tasks = %w[spec rubocop]
   task :run do

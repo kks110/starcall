@@ -1,0 +1,20 @@
+env:
+  RUBY_VERSION: 2.6
+
+name: tests
+on: [push]
+jobs:
+  rubocop-and-rspec:
+    name: Rubocop and Rspec
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: ${{ env.RUBY_VERSION }}
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install
+      - name: Check code
+        run: bundle exec rake github:run
