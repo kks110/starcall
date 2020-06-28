@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'starcall/error'
-
 module Starcall
   # This class is used to list and validate regions.
   class Regions

@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-require 'starcall/api_requests'
-require 'starcall/regions'
-require 'starcall/languages'
-
 module Starcall
   # This class is used for all things Static Data related.
   # Using Riots Static data and Data Dragon.
