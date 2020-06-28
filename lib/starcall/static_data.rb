@@ -2,16 +2,19 @@
 
 require 'starcall/api_requests'
 require 'starcall/regions'
+require 'starcall/languages'
 
 module Starcall
   # This class is used for all things Static Data related.
   # Using Riots Static data and Data Dragon.
   class StaticData
     # Initialize the class with a region, if none is supplied, EUW will be assumed.
-    def initialize(region: 'euw')
+    def initialize(region: 'euw', language: 'en_GB')
       Starcall::Regions.valid?(region: region)
+      Starcall::Languages.valid?(language: language)
 
       @region = region
+      @language = language
     end
 
     # Season ids are used in match history to indicate which season a match was played.
@@ -85,7 +88,7 @@ module Starcall
 
     private
 
-    attr_reader :region
+    attr_reader :region, :language
 
     # This help build the static data url for thins such as map ids.
     def static_url(search_term:)
@@ -111,7 +114,7 @@ module Starcall
     # using the above method to get the version.
     def dd_url(game_component:)
       'http://ddragon.leagueoflegends.com/cdn/'\
-      "#{dd_current_data_version(game_component: game_component)}/data/en_GB/"\
+      "#{dd_current_data_version(game_component: game_component)}/data/#{language}/"\
       "#{game_component}.json"
     end
 
@@ -119,7 +122,7 @@ module Starcall
     def dd_specific_champion_url(champion_name:)
       'http://ddragon.leagueoflegends.com/cdn/'\
       "#{dd_current_data_version(game_component: 'champion')}"\
-      "/data/en_GB/champion/#{champion_name}.json"
+      "/data/#{language}/champion/#{champion_name}.json"
     end
   end
 end
