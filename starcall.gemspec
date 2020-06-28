@@ -35,6 +35,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rubocop', '~> 0.86'
   spec.add_development_dependency 'rubocop-rspec', '~> 1.40'
+  spec.add_development_dependency 'pry', '~> 0.13'
 
   spec.add_runtime_dependency 'httparty', '~> 0.17'
 end
