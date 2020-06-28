@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'starcall/api_requests'
 require 'starcall/error'
 require 'starcall/languages'
 require 'starcall/regions'
