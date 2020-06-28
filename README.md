@@ -33,6 +33,14 @@ A full list of supported regions can be obtained by running:
 Starcall::Regions.list
 ```
 
+### Languages
+Things such as champion data is avalible in different languages.
+
+A full list of supported languages can be obtained by running:
+```ruby
+Starcall::Languages.list
+```
+
 
 ### Static Queries
 
@@ -44,8 +52,13 @@ static_data = Starcall::StaticData.new
 Some of the queries below can return different data based on the region. When you initialize the class, you can pass in a valid region.
 Regions that Riot support can be queried as per the Regions section above.
 If no region is supplied, 'euw' will be assumed.
+
+Some of the queries below can be returned in different languages.
+Languages that Riot support can be queried as per the Languages section above.
+If no language is supplied, 'en_GB' (English Great Britain) will be assumed.
+
 ```ruby
-Starcall::StaticData.new(region: 'na')
+Starcall::StaticData.new(region: 'kr', language: 'ko_KR')
 ```
 
 #### `season_ids`
