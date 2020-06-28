@@ -3,6 +3,20 @@
 ## master (unreleased)
 
 ### New features
+None
+
+### Changes
+None
+
+### Bug fixes 
+None
+
+---
+
+## v0.2.0 - Ahri
+![Aatrox](http://ddragon.leagueoflegends.com/cdn/10.12.1/img/champion/Ahri.png)
+
+### New features
 - Regions
     - `Starcall::Regions.list` for a full list of supported regions.
     - Static data that can change per region and now supports different regions.
@@ -20,6 +34,8 @@ If none is supplied, `euw` and `en_GB` is assumed.
 
 ### Bug fixes 
 None
+
+---
 
 ## v0.1.1 - Aatrox
 ![Aatrox](http://ddragon.leagueoflegends.com/cdn/10.12.1/img/champion/Aatrox.png)
