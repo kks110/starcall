@@ -32,5 +32,4 @@ RSpec.describe Starcall::Error::InvalidLanguage do
       expect { raise invalid_language_error }.to raise_error.with_message(msg)
     end
   end
-
 end
