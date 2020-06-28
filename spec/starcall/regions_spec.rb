@@ -40,7 +40,7 @@ RSpec.describe Starcall::Regions do
 
     context 'invalid region' do
       before do
-        allow(Starcall::Error::InvalidRegion).to receive(:new).and_raise(StandardError)
+        allow(Starcall::Errors::InvalidRegion).to receive(:new).and_raise(StandardError)
       end
 
       let(:region_to_test) { 'abc' }

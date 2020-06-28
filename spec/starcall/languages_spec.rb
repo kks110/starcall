@@ -57,7 +57,7 @@ RSpec.describe Starcall::Languages do
 
     context 'invalid region' do
       before do
-        allow(Starcall::Error::InvalidLanguage).to receive(:new).and_raise(StandardError)
+        allow(Starcall::Errors::InvalidLanguage).to receive(:new).and_raise(StandardError)
       end
 
       let(:region_to_test) { 'ab_CD' }

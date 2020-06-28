@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative '../../lib/starcall/static_data'
-require_relative '../../lib/starcall/error'
+require_relative '../../lib/starcall/errors/errors'
 
 RSpec.describe Starcall::StaticData do
   before do
@@ -93,26 +93,26 @@ RSpec.describe Starcall::StaticData do
 
   context 'region is invalid' do
     before do
-      allow(Starcall::Regions).to receive(:valid?).and_raise(Starcall::Error::InvalidRegion.new(region: region))
+      allow(Starcall::Regions).to receive(:valid?).and_raise(Starcall::Errors::InvalidRegion.new(region: region))
     end
 
     describe '#initialize' do
       let(:region) { 'not_a_region' }
       it 'raises an error in initialisation' do
-        expect { described_class.new(region: region) }.to raise_error(Starcall::Error::InvalidRegion)
+        expect { described_class.new(region: region) }.to raise_error(Starcall::Errors::InvalidRegion)
       end
     end
   end
 
   context 'region is invalid' do
     before do
-      allow(Starcall::Languages).to receive(:valid?).and_raise(Starcall::Error::InvalidLanguage.new(language: language))
+      allow(Starcall::Languages).to receive(:valid?).and_raise(Starcall::Errors::InvalidLanguage.new(language: language))
     end
 
     describe '#initialize' do
       let(:language) { 'not_a_language' }
       it 'raises an error in initialisation' do
-        expect { described_class.new(language: language) }.to raise_error(Starcall::Error::InvalidLanguage)
+        expect { described_class.new(language: language) }.to raise_error(Starcall::Errors::InvalidLanguage)
       end
     end
   end
