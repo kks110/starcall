@@ -103,4 +103,17 @@ RSpec.describe Starcall::StaticData do
       end
     end
   end
+
+  context 'region is invalid' do
+    before do
+      allow(Starcall::Languages).to receive(:valid?).and_raise(Starcall::Error::InvalidLanguage.new(language: language))
+    end
+
+    describe '#initialize' do
+      let(:language) { 'not_a_language' }
+      it 'raises an error in initialisation' do
+        expect { described_class.new(language: language) }.to raise_error(Starcall::Error::InvalidLanguage)
+      end
+    end
+  end
 end

@@ -4,11 +4,16 @@
 
 ### New features
 - Regions
-    - `Starcall::Regions.list` for a full list of support regions.
-    - Static data that can change per region, now supports a region.
+    - `Starcall::Regions.list` for a full list of supported regions.
+    - Static data that can change per region and now supports different regions.
+    
+- Languages
+    - `Starcall::Languages.list` for a full list of supported languages.
+    - Static data comes in different languages and now supports different languages.
 
 ### Changes
-- `Starcall::StaticData` now needs to be initialised. Can be initialised with a region. If none is supplied, 'euw' is assumed.
+- `Starcall::StaticData` now needs to be initialised. Can be initialised with a region and a language.
+If none is supplied, `euw` and `en_GB` is assumed.
 - `dd_euw_versions` has now become `dd_region_versions` defaulting to `euw` if no region has been supplied.
 - Errors
     - An error module has now been created where custom errors will be stored.
