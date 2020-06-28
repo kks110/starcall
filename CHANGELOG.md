@@ -13,8 +13,22 @@ None
 
 ---
 
+## v0.2.1 - Akali
+![Akali](http://ddragon.leagueoflegends.com/cdn/10.12.1/img/champion/Akali.png)
+
+### New features
+None
+
+### Changes
+None
+
+### Bug fixes 
+- The program now functions correctly with the details in the read me.
+
+---
+
 ## v0.2.0 - Ahri
-![Aatrox](http://ddragon.leagueoflegends.com/cdn/10.12.1/img/champion/Ahri.png)
+![Ahri](http://ddragon.leagueoflegends.com/cdn/10.12.1/img/champion/Ahri.png)
 
 ### New features
 - Regions
