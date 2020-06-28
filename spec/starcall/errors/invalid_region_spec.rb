@@ -17,4 +17,3 @@ RSpec.describe Starcall::Errors::InvalidRegion do
     end
   end
 end
-

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Starcall
   module Errors
     # A Custom error message, used when an incorrect region is passed.
