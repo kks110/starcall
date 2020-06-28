@@ -7,6 +7,7 @@ None
 
 ### Changes
 - Move `ApiRequests` under the `Starcall` namespace.
+- Move errors in to their own directory.
 
 ### Bug fixes 
 None
