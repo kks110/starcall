@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    starcall (0.1.1)
+    starcall (0.2.0)
       httparty (~> 0.17)
 
 GEM
