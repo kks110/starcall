@@ -7,7 +7,7 @@ Layout/LineLength:
   Max: 120
 
 Metrics/BlockLength:
-  ExcludedMethods: ['describe', 'context']
+  ExcludedMethods: ['let', 'describe', 'context']
 
 Metrics/MethodLength:
   Max: 15
