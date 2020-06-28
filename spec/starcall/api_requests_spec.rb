@@ -2,7 +2,7 @@
 
 require_relative '../../lib/starcall/api_requests'
 
-RSpec.describe ApiRequests do
+RSpec.describe Starcall::ApiRequests do
   describe '.make_request' do
     subject(:requester) { described_class.make_request(url: url) }
 

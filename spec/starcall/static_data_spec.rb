@@ -5,7 +5,7 @@ require_relative '../../lib/starcall/error'
 
 RSpec.describe Starcall::StaticData do
   before do
-    allow(ApiRequests).to receive(:make_request).and_return(response)
+    allow(Starcall::ApiRequests).to receive(:make_request).and_return(response)
   end
 
   let(:response) do
@@ -27,7 +27,7 @@ RSpec.describe Starcall::StaticData do
 
     it 'calls the api' do
       season_ids
-      expect(ApiRequests).to have_received(:make_request).with(url)
+      expect(Starcall::ApiRequests).to have_received(:make_request).with(url)
     end
   end
 
@@ -39,7 +39,7 @@ RSpec.describe Starcall::StaticData do
 
     it 'calls the api' do
       queue_ids
-      expect(ApiRequests).to have_received(:make_request).with(url)
+      expect(Starcall::ApiRequests).to have_received(:make_request).with(url)
     end
   end
 
@@ -51,7 +51,7 @@ RSpec.describe Starcall::StaticData do
 
     it 'calls the api' do
       map_ids
-      expect(ApiRequests).to have_received(:make_request).with(url)
+      expect(Starcall::ApiRequests).to have_received(:make_request).with(url)
     end
   end
 
@@ -63,7 +63,7 @@ RSpec.describe Starcall::StaticData do
 
     it 'calls the api' do
       game_modes
-      expect(ApiRequests).to have_received(:make_request).with(url)
+      expect(Starcall::ApiRequests).to have_received(:make_request).with(url)
     end
   end
 
@@ -75,7 +75,7 @@ RSpec.describe Starcall::StaticData do
 
     it 'calls the api' do
       game_types
-      expect(ApiRequests).to have_received(:make_request).with(url)
+      expect(Starcall::ApiRequests).to have_received(:make_request).with(url)
     end
   end
 
@@ -87,7 +87,7 @@ RSpec.describe Starcall::StaticData do
 
     it 'calls the api' do
       dd_versions
-      expect(ApiRequests).to have_received(:make_request).with(url)
+      expect(Starcall::ApiRequests).to have_received(:make_request).with(url)
     end
   end
 
