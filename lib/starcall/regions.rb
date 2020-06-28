@@ -24,7 +24,7 @@ module Starcall
     def self.valid?(region:)
       return true if list.include? region
 
-      raise Starcall::Error::InvalidRegion.new(region: region)
+      raise Starcall::Errors::InvalidRegion.new(region: region)
     end
   end
 end

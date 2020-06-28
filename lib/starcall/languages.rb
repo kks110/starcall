@@ -43,7 +43,7 @@ module Starcall
     def self.valid?(language:)
       return true if list.include? language
 
-      raise Starcall::Error::InvalidLanguage.new(language: language)
+      raise Starcall::Errors::InvalidLanguage.new(language: language)
     end
   end
 end
