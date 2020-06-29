@@ -7,9 +7,8 @@ module Starcall
   # Intened to only be used my internal Gem classes and not be called directly.
   class ApiRequests
     def self.make_request(url:)
-      HTTParty.get(url, {
-        headers: {"X-Riot-Token" => ENV["RIOT_API_KEY"]}
-      }).parsed_response
+      HTTParty.get(url, { headers: {'X-Riot-Token' => ENV['RIOT_API_KEY']} }).parsed_response
     end
   end
 end
+

@@ -7,33 +7,30 @@ module Starcall
     class RegionParser
       def self.parse(region:)
         Starcall::Regions.valid?(region: region)
-        region_to_return = case region
-        when region == 'br'
-          raise 'br1'
-        when region == 'eune'
+        case region
+        when 'br'
+          'br1'
+        when 'eune'
           'eun1'
-        when region == 'euw'
+        when 'euw'
           'euw1'
-        when region == 'lan'
+        when 'lan'
           'la1'
-        when region == 'las'
+        when 'las'
           'la2'
-        when region == 'na'
+        when 'na'
           'na1'
-        when region == 'oce'
+        when 'oce'
           'oc1'
-        when region == 'ru'
+        when 'ru'
           'ru'
-        when region == 'tr'
+        when 'tr'
           'tr1'
-        when region == 'jp'
+        when 'jp'
           'jp1'
-        when region == 'kr'
+        when 'kr'
           'kr'
-        else
-          nil
         end
-        region_to_return
       end
     end
   end
