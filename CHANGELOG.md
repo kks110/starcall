@@ -14,7 +14,7 @@ None
 ---
 
 ## v0.3.0 - Alistar
-![Akali](http://ddragon.leagueoflegends.com/cdn/10.12.1/img/champion/Alistar.png)
+![Alistar](http://ddragon.leagueoflegends.com/cdn/10.12.1/img/champion/Alistar.png)
 
 ### New features
 - Added the 3 Champion Mastery Endpoints. 
