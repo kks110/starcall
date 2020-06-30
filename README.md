@@ -119,6 +119,34 @@ Details about summoner spells.
 
 Details about profile icons and where they can be found on the sprite sheets.
 
+## Endpoints
+The below commands require a Riot API key.
+It needs to be saved as an ENV var and called `RIOT_API_KEY`
+### Champion Mastery V4
+
+#### `summoner`
+[Riot API Documentation](https://developer.riotgames.com/apis#champion-mastery-v4/GET_getAllChampionMasteries)
+
+Required fields:
+- `encrypted_summoner_id` (The encrypted summoner ID for the summoner you want to know about.)
+- `region` (The reigion that the summoner is in.)
+
+#### `summoner_on_champion`
+[Riot API Documentation](https://developer.riotgames.com/apis#champion-mastery-v4/GET_getChampionMastery)
+
+Required fields:
+- `encrypted_summoner_id` (The encrypted summoner ID for the summoner you want to know about.)
+- `champion_id` (The ID number of the champion that you want to know about.)
+- `region` (The reigion that the summoner is in.)
+
+#### `summoner_total_mastery`
+[Riot API Documentation](https://developer.riotgames.com/apis#champion-mastery-v4/GET_getChampionMasteryScore)
+
+Required fields:
+- `encrypted_summoner_id` (the encrypted summoner ID for the summoner you want to know about.)
+- `region` (The reigion that the summoner is in.)
+
+
 ## Development
 
 After checking out the repo, run `bundle install` to install dependencies. 
