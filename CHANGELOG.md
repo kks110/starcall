@@ -3,18 +3,29 @@
 ## master (unreleased)
 
 ### New features
+None
+
+### Changes
+None
+
+### Bug fixes 
+None
+
+---
+
+## v0.3.0 - Alistar
+![Akali](http://ddragon.leagueoflegends.com/cdn/10.12.1/img/champion/Alistar.png)
+
+### New features
 - Added the 3 Champion Mastery Endpoints. 
 - `ApiRequests` now checks for an API key called `RIOT_API_KEY` and adds to the headers.
 - Added a region parser as the API URLs require a region, but they are not the same as the normal regions.
-
 
 ### Changes
 - Move `ApiRequests` under the `Starcall` namespace.
 - Move errors in to their own directory.
 
-
 ### Bug fixes 
-None
 
 ---
 
