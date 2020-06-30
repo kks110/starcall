@@ -5,12 +5,13 @@ require 'starcall/api_requests'
 
 module Starcall
   module Endpoints
+    # Methods used to call the Champion Mastery endpoints.
     class ChampionMasteryV4
       # Get all champion mastery entries sorted by number of champion points descending.
       def self.summoner(encrypted_summoner_id:, region:)
         Starcall::Regions.valid?(region: region)
         parsed_region = Starcall::Helpers::RegionParser.parse(region: region)
-        Starcall::ApiRequests(
+        Starcall::ApiRequests.make_request(
           url: "https://#{parsed_region}.api.riotgames.com"\
                "/lol/champion-mastery/v4/champion-masteries/by-summoner/#{encrypted_summoner_id}"
         )
@@ -20,10 +21,10 @@ module Starcall
       def self.summoner_on_champion(encrypted_summoner_id:, champion_id:, region:)
         Starcall::Regions.valid?(region: region)
         parsed_region = Starcall::Helpers::RegionParser.parse(region: region)
-        Starcall::ApiRequests(
+        Starcall::ApiRequests.make_request(
           url: "https://#{parsed_region}.api.riotgames.com"\
                "/lol/champion-mastery/v4/champion-masteries/by-summoner/#{encrypted_summoner_id}"\
-               "by-champion/#{champion_id}"
+               "/by-champion/#{champion_id}"
         )
       end
 
@@ -31,7 +32,7 @@ module Starcall
       def self.summoner_total_mastery(encrypted_summoner_id:, region:)
         Starcall::Regions.valid?(region: region)
         parsed_region = Starcall::Helpers::RegionParser.parse(region: region)
-        Starcall::ApiRequests(
+        Starcall::ApiRequests.make_request(
           url: "https://#{parsed_region}.api.riotgames.com"\
                "/lol/champion-mastery/v4/scores/by-summoner/#{encrypted_summoner_id}"
         )
