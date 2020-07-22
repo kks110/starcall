@@ -3,12 +3,26 @@
 ## master (unreleased)
 
 ### New features
-- Added the champion endpoints.
+None
 
 ### Changes
 None
 
 ### Bug fixes 
+None
+
+---
+
+## v0.4.0 - Amumu
+![Amumu](http://ddragon.leagueoflegends.com/cdn/10.12.1/img/champion/Amumu.png)
+
+### New features
+- Added the champion endpoints.
+
+### Changes
+None
+
+### Bug fixes
 None
 
 ---
@@ -25,7 +39,8 @@ None
 - Move `ApiRequests` under the `Starcall` namespace.
 - Move errors in to their own directory.
 
-### Bug fixes 
+### Bug fixes
+None
 
 ---
 
