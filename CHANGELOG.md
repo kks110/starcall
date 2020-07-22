@@ -3,7 +3,7 @@
 ## master (unreleased)
 
 ### New features
-None
+- Added the champion endpoints.
 
 ### Changes
 None

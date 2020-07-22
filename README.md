@@ -129,7 +129,7 @@ It needs to be saved as an ENV var and called `RIOT_API_KEY`
 
 Required fields:
 - `encrypted_summoner_id` (The encrypted summoner ID for the summoner you want to know about.)
-- `region` (The reigion that the summoner is in.)
+- `region` (The region that the summoner is in.)
 
 #### `summoner_on_champion`
 [Riot API Documentation](https://developer.riotgames.com/apis#champion-mastery-v4/GET_getChampionMastery)
@@ -137,14 +137,24 @@ Required fields:
 Required fields:
 - `encrypted_summoner_id` (The encrypted summoner ID for the summoner you want to know about.)
 - `champion_id` (The ID number of the champion that you want to know about.)
-- `region` (The reigion that the summoner is in.)
+- `region` (The region that the summoner is in.)
 
 #### `summoner_total_mastery`
 [Riot API Documentation](https://developer.riotgames.com/apis#champion-mastery-v4/GET_getChampionMasteryScore)
 
 Required fields:
 - `encrypted_summoner_id` (the encrypted summoner ID for the summoner you want to know about.)
-- `region` (The reigion that the summoner is in.)
+- `region` (The region that the summoner is in.)
+
+### Champion V3
+#### `champion_rotations`
+[Riot API Documentation](https://developer.riotgames.com/apis#champion-v3/GET_getChampionInfo)
+
+Required fields:
+- None
+
+Optional fields:
+- `region` (By default it will assume `euw`, if you want to know for a specific region, you can pass that in.)
 
 
 ## Development
