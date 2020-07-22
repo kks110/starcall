@@ -12,7 +12,7 @@ module Starcall
         Starcall::Regions.valid?(region: region)
         Starcall::ApiRequests.make_request(
           url: "https://#{parse_region(region: region)}.api.riotgames.com"\
-               "/lol/platform/v3/champion-rotations"
+               '/lol/platform/v3/champion-rotations'
         )
       end
 
