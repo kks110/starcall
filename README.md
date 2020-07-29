@@ -156,6 +156,55 @@ Required fields:
 Optional fields:
 - `region` (By default it will assume `euw`, if you want to know for a specific region, you can pass that in.)
 
+### Clash V3
+#### `clash_by_summoner_id`
+[Riot API Documentation](https://developer.riotgames.com/apis#clash-v1/GET_getPlayersBySummoner)
+
+Required fields:
+- `encrypted_summoner_id` (the encrypted summoner ID for the summoner you want to know about.)
+- `region` (The region that the summoner is in.)
+
+Optional fields:
+- None
+
+#### `clash_by_team_id`
+[Riot API Documentation](https://developer.riotgames.com/apis#clash-v1/GET_getTeamById)
+
+Required fields:
+- `team_id` (the team ID for the team you want to know about.)
+- `region` (The region that the team is in.)
+
+Optional fields:
+- None
+
+#### `clash_tournaments`
+[Riot API Documentation](https://developer.riotgames.com/apis#clash-v1/GET_getTournaments)
+
+Required fields:
+- `region` (The region that you want to know about.)
+
+Optional fields:
+- None
+
+#### `clash_tournaments_by_team_id`
+[Riot API Documentation](https://developer.riotgames.com/apis#clash-v1/GET_getTournaments)
+
+Required fields:
+- `team_id` (the team ID for the team you want to know about.)
+- `region` (The region that the team is in.)
+
+Optional fields:
+- None
+
+#### `clash_tournaments_by_tournament_id`
+[Riot API Documentation](https://developer.riotgames.com/apis#clash-v1/GET_getTournaments)
+
+Required fields:
+- `tournament_id` (the tournament ID for the tournament you want to know about.)
+- `region` (The region that the tournament is in.)
+
+Optional fields:
+- None
 
 ## Development
 
