@@ -12,7 +12,9 @@ RSpec.describe Starcall::Endpoints::SummonerV4 do
   let(:response) { 'response' }
 
   describe '.by_account_id' do
-    subject(:by_account_id) { described_class.by_account_id(encrypted_account_id: encrypted_account_id, region: region) }
+    subject(:by_account_id) do
+      described_class.by_account_id(encrypted_account_id: encrypted_account_id, region: region)
+    end
 
     let(:encrypted_account_id) { 'encrypted_account_id' }
     let(:region) { 'euw' }
