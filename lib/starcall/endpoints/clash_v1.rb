@@ -29,8 +29,7 @@ module Starcall
       def self.clash_tournaments(region:)
         Starcall::Regions.valid?(region: region)
         Starcall::ApiRequests.make_request(
-          url: "https://#{parse_region(region: region)}.api.riotgames.com"\
-               "/lol/clash/v1/tournaments"
+          url: "https://#{parse_region(region: region)}.api.riotgames.com/lol/clash/v1/tournaments"
         )
       end
 

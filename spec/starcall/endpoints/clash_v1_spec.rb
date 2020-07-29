@@ -12,7 +12,9 @@ RSpec.describe Starcall::Endpoints::ClashV1 do
   let(:response) { 'response' }
 
   describe '.clash_by_summoner_id' do
-    subject(:clash_by_summoner_id) { described_class.clash_by_summoner_id(encrypted_summoner_id: summoner_id, region: region) }
+    subject(:clash_by_summoner_id) do
+      described_class.clash_by_summoner_id(encrypted_summoner_id: summoner_id, region: region)
+    end
 
     let(:summoner_id) { 'summoner_id' }
     let(:region) { 'euw' }
@@ -53,7 +55,7 @@ RSpec.describe Starcall::Endpoints::ClashV1 do
     let(:region) { 'euw' }
 
     let(:url) do
-      { url: "https://euw1.api.riotgames.com/lol/clash/v1/tournaments" }
+      { url: 'https://euw1.api.riotgames.com/lol/clash/v1/tournaments' }
     end
 
     it 'calls the api' do
