@@ -3,13 +3,14 @@
 ## master (unreleased)
 
 ### New features
-None
+- Add Clash V1 endpoint.
+- Add the summoner endpoint.
 
 ### Changes
 None
 
 ### Bug fixes 
-None
+- Add Champion V3 to the endpoints file, making it accessible.
 
 ---
 
