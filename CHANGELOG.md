@@ -3,13 +3,27 @@
 ## master (unreleased)
 
 ### New features
+None
+
+### Changes
+None
+
+### Bug fixes 
+None
+
+---
+
+## v0.5.0 - Anivia
+![Anivia](http://ddragon.leagueoflegends.com/cdn/10.12.1/img/champion/Anivia.png)
+
+### New features
 - Add Clash V1 endpoint.
 - Add the summoner endpoint.
 
 ### Changes
 None
 
-### Bug fixes 
+### Bug fixes
 - Add Champion V3 to the endpoints file, making it accessible.
 
 ---
