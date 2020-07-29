@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    starcall (0.4.0)
+    starcall (0.5.0)
       httparty (~> 0.17)
 
 GEM
@@ -71,4 +71,4 @@ DEPENDENCIES
   starcall!
 
 BUNDLED WITH
-   2.0.2
+   2.1.4
