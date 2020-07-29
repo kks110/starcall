@@ -4,6 +4,7 @@
 
 ### New features
 - Add Clash V1 endpoint.
+- Add the summoner endpoint.
 
 ### Changes
 None

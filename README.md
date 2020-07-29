@@ -122,6 +122,47 @@ Details about profile icons and where they can be found on the sprite sheets.
 ## Endpoints
 The below commands require a Riot API key.
 It needs to be saved as an ENV var and called `RIOT_API_KEY`
+### SummonerV4
+#### `by_account_id`
+[Riot API Documentation](https://developer.riotgames.com/apis#summoner-v4/GET_getByAccountId)
+
+Required fields:
+- `encrypted_summoner_id` (The encrypted summoner ID for the summoner you want to know about.)
+- `region` (The region that the summoner is in.)
+
+Optional fields:
+None
+
+#### `by_summoner_name`
+[Riot API Documentation](https://developer.riotgames.com/apis#summoner-v4/GET_getBySummonerName)
+
+Required fields:
+- `summoner_name` (The summoner name for the summoner you want to know about.)
+- `region` (The region that the summoner is in.)
+
+Optional fields:
+None
+
+#### `by_puuid`
+[Riot API Documentation](https://developer.riotgames.com/apis#summoner-v4/GET_getByPUUID)
+
+Required fields:
+- `puuid` (The puuid for the summoner you want to know about.)
+- `region` (The region that the summoner is in.)
+
+Optional fields:
+None
+
+#### `by_summoner_id`
+[Riot API Documentation](https://developer.riotgames.com/apis#summoner-v4/GET_getBySummonerId)
+
+Required fields:
+- `summoner_id` (The summoner id for the summoner you want to know about.)
+- `region` (The region that the summoner is in.)
+
+Optional fields:
+None
+
 ### Champion Mastery V4
 
 #### `summoner`
