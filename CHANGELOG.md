@@ -5,6 +5,7 @@
 ### New features
 - Add Status V3 endpoint.
 - Add third party code endpoint.
+- Add Spectator endpoints.
 
 ### Changes
 None
