@@ -257,6 +257,16 @@ Required fields:
 Optional fields:
 - `region` (By default it will assume `euw`, if you want to know for a specific region, you can pass that in.)
 
+### ThirdPartyCodeV4
+#### `check_for_summoner`
+[Riot API Documentation](https://developer.riotgames.com/apis#third-party-code-v4)
+
+Required fields:
+- `encrypted_summoner_id` (The encrypted summoner ID for the summoner you want to know about.)
+- `region` (The region that the summoner is in.)
+
+Optional fields:
+None
 
 ## Development
 
