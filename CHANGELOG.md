@@ -3,6 +3,20 @@
 ## master (unreleased)
 
 ### New features
+None
+
+### Changes
+None
+
+### Bug fixes 
+None
+
+---
+
+## v0.6.0 - Annie
+![Annie](http://ddragon.leagueoflegends.com/cdn/10.12.1/img/champion/Annie.png)
+
+### New features
 - Add Status V3 endpoint.
 - Add third party code endpoint.
 - Add Spectator endpoints.
@@ -10,7 +24,7 @@
 ### Changes
 None
 
-### Bug fixes 
+### Bug fixes
 None
 
 ---
