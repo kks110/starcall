@@ -2,8 +2,8 @@
 
 ----
 ![Build Status](https://img.shields.io/github/workflow/status/kks110/starcall/tests/master)
-![Gem Version](https://img.shields.io/gem/v/starcall)
-![Downloads](https://img.shields.io/gem/dt/starcall)
+[![Gem Version](https://img.shields.io/gem/v/starcall)](https://rubygems.org/gems/starcall)
+[![Downloads](https://img.shields.io/gem/dt/starcall)](https://rubygems.org/gems/starcall)
 ---
 A Gem to help with calls to Riot API.
 
