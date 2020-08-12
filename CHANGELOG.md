@@ -3,7 +3,7 @@
 ## master (unreleased)
 
 ### New features
-None
+- Add Status V3 endpoint.
 
 ### Changes
 None

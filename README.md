@@ -247,6 +247,17 @@ Required fields:
 Optional fields:
 - None
 
+### Status V3
+#### `status_data`
+[Riot API Documentation](https://developer.riotgames.com/apis#lol-status-v3/GET_getShardData)
+
+Required fields:
+- None
+
+Optional fields:
+- `region` (By default it will assume `euw`, if you want to know for a specific region, you can pass that in.)
+
+
 ## Development
 
 After checking out the repo, run `bundle install` to install dependencies. 
